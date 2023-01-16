@@ -54,7 +54,7 @@ app.post("/cheeses", async (req, res) => {
     }
 })
 
-app.put("/people/:id", async (req, res) => {
+app.put("/cheeses/:id", async (req, res) => {
     try{
         res.json(await Cheese.findByIdAndUpdate(req.params.id, req.body, {new: true}))
     }catch(error){
@@ -62,7 +62,7 @@ app.put("/people/:id", async (req, res) => {
     }
 })
 
-app.delete("/people/:id", async (req, res) => {
+app.delete("/cheeses/:id", async (req, res) => {
     try{
         res.json(await Cheese.findByIdAndRemove(req.params.id))
     }catch(error){
@@ -70,7 +70,7 @@ app.delete("/people/:id", async (req, res) => {
         }
     })
 
-    app.get("/people/:id", async (req, res) => {
+    app.get("/cheeses/:id", async (req, res) => {
         try{
             res.json(await Cheese.findById(req.params.id))
         }catch(error){
